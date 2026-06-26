@@ -13,7 +13,7 @@ rag-app/
 │   │   ├── middlewares/      # global error handler
 │   │   ├── models/           # domain.py (dataclasses) · schemas.py (Pydantic)
 │   │   └── services/
-│   │       ├── chunking/     # document_parser · text_chunker
+│   │       ├── chunking/     
 │   │       ├── embedding/    # embedding_service (Groq nomic-embed-text)
 │   │       ├── vector_store/ # in-memory cosine similarity store
 │   │       ├── cache/        # semantic_cache
@@ -24,14 +24,14 @@ rag-app/
 └── frontend/                 # React + Vite + Tailwind
     └── src/
         ├── components/
-        │   ├── features/     # ChatPanel · MessageBubble · UploadZone · DocumentList
-        │   │                 # CostMetricsPanel · SourcesAccordion
-        │   ├── layout/       # Sidebar
-        │   └── ui/           # Badge · Spinner · Tooltip
-        ├── hooks/            # useDocuments · useQuery
-        ├── services/         # apiClient · api
-        ├── store/            # appStore (Zustand)
-        └── types/            # api.ts
+        │   ├── features/     
+        │   │                 
+        │   ├── layout/       
+        │   └── ui/           
+        ├── hooks/            
+        ├── services/         
+        ├── store/            
+        └── types/            
 ```
 
 ## Cost Optimization Techniques
