@@ -57,13 +57,13 @@ def get_document(document_id: str) -> DocumentResponse:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Document not found")
 
 
-@router.delete("/{document_id}", status_code=status.HTTP_204_NO_CONTENT)
-def delete_document(document_id: str) -> None:
+@router.delete("/{document_id}", status_code=status.HTTP_200_OK)
+def delete_document(document_id: str) -> dict:
     try:
         get_document_service().delete(document_id)
+        return {"message": "Document deleted successfully"}
     except DocumentNotFoundError:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Document not found")
-
 
 def _to_response(doc) -> DocumentResponse:
     return DocumentResponse(

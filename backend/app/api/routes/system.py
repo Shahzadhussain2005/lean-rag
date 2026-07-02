@@ -23,7 +23,8 @@ def cache_stats() -> CacheStatsResponse:
     )
 
 
-@router.delete("/cache", status_code=204)
-def clear_cache() -> None:
+@router.delete("/cache", status_code=200)
+def clear_cache() -> dict:
     from app.services.cache import semantic_cache as _mod
     _mod._instance = None
+    return {"message": "Cache cleared"}
