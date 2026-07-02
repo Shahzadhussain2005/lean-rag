@@ -4,6 +4,11 @@ from app.core.config import get_settings
 
 app = create_app()
 
+@app.on_event("startup")
+async def preload_models():
+    from app.services.embedding.embedding_service import get_embedding_service
+    get_embedding_service()
+
 if __name__ == "__main__":
     settings = get_settings()
     uvicorn.run(
